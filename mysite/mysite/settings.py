@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'users',
-    'market'
+    'market',
+    
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -124,3 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
