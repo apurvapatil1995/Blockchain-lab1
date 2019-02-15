@@ -27,10 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "wapp.User"
 
 # Application definition
 
 INSTALLED_APPS = [
+    'blockChainMarketplace.wapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

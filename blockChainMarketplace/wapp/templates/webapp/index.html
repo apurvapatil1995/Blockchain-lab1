@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>
+			Home
+		</title>
+	</head>
+	<body>
+		Here is the table
+		 <table style="width:100%">
+  			<tr>
+    				<th>Seller</th>
+				<th>Item Name</th>
+    				<th>Item Description</th>
+    				<th>Price</th>
+  			</tr>
+			{% for item in item_list %}
+			{% if item.available %}
+  			<tr>
+				<td>{{item.seller_id}}</td>
+    				<td>{{item.item_name}}</td>
+    				<td>{{item.item_desc}}</td>
+				<td>{{item.price}}</td>
+  			</tr>
+			{% endif %}
+			{% endfor %}
+		</table>
+	</body>
+</html>
