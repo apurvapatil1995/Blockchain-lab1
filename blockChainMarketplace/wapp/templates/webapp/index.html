@@ -28,17 +28,14 @@
 			{% endif %}
 			{% endfor %}
 		</table>
-
-		<form action='accounts/logout/'>
-
 		<div style="text-align:center; margin:10px">
 			<form action="{% url 'wapp:sell' %}" method="post">
 			{% csrf_token %}
 				<button style="left:50%" type="submit">I want to sell something</button>
 			</form>
 		</div>
-		<form action='/accounts/login'>
->>>>>>> a4ca7708f363730171a4278a3847fc39ddd80a5b
+		<form action='/accounts/logout'>
+
                 <button type ="submit"> Log out</button>
                 </form>
 	</body>
