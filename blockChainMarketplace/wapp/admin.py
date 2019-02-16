@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User, SaleItem
+from .models import User, SaleItem, Txn
 
 # Register your models here.
 admin.site.register(User, UserAdmin)
 admin.site.register(SaleItem)
+admin.site.register(Txn)
