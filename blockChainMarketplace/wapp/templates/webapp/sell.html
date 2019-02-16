@@ -3,6 +3,13 @@
 		<title>sell</title>
 	</head>
 	<body>
-		<h1>You'll sell stuff here</h1>
+		<h1>What do you want to sell {{user.username}}?</h1>
+		<form action="{% url 'wapp:sellExec' %}" method="post">
+		{% csrf_token %}
+		Item Name: <input type="text" name="item_name"><br>
+		Item Description: <input type="text" name="item_desc"><br>
+		Price: <input type="text" name="price"><br>
+		<input type="submit" value="Sell"><br>
+		</form>
 	</body>
 </html>

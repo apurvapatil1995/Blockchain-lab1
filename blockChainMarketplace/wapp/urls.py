@@ -7,5 +7,6 @@ app_name = 'blockChainMarketplace'
 urlpatterns = [
     path('', views.index, name='index'),
     path('sell', views.sell, name='sell'),
+    path('sellExec', views.sellExec, name='sellExec'),
     path('<int:item_id>/buy', views.buy, name='buy'),
 ]
