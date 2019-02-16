@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('blockChainMarketplace.wapp.urls')),
+    
     path('admin/', admin.site.urls),
 ]
 

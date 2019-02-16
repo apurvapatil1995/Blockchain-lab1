@@ -8,7 +8,9 @@ from .models import SaleItem
 def index(request):
     item_list = SaleItem.objects.all()
     template = loader.get_template('webapp/index.html')
+    
     context = {
             'item_list': item_list
         }
     return HttpResponse(template.render(context, request))
+
