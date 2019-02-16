@@ -2,6 +2,8 @@
 
 Currently simple web app with login, buy and sell.
 
+Written in Django. No dependencies. Run using "Python manage.py runserver"
+
 Members
 _______
 
