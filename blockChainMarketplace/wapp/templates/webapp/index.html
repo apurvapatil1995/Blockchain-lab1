@@ -5,7 +5,7 @@
 		</title>
 	</head>
 	<body>
-		Here is the table
+		<h1>Welcome to Block Chain Marketplace</h1>
 		 <table style="width:100%">
   			<tr>
     				<th>Seller</th>
@@ -20,9 +20,19 @@
     				<td>{{item.item_name}}</td>
     				<td>{{item.item_desc}}</td>
 				<td>{{item.price}}</td>
+				<form action="{% url 'wapp:buy' item.item_id%}" method="post">
+                        	{% csrf_token %}
+				<td><button type="submit">Buy</button></td>
+				</form>
   			</tr>
 			{% endif %}
 			{% endfor %}
 		</table>
+		<div style="text-align:center; margin:10px">
+			<form action="{% url 'wapp:sell' %}" method="post">
+			{% csrf_token %}
+				<button style="left:50%" type="submit">I want to sell something</button>
+			</form>
+		</div>
 	</body>
 </html>

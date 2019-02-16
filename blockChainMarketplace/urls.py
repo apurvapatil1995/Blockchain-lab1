@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('blockChainMarketplace.wapp.urls')),
+    path('', include('blockChainMarketplace.wapp.urls', namespace='wapp')),
     path('admin/', admin.site.urls),
 ]
