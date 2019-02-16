@@ -4,6 +4,8 @@ Currently simple web app with login, buy and sell.
 
 Written in Django. No dependencies. Run using "Python manage.py runserver"
 
+Access at https://localhost:8000/accounts/login
+
 Members
 _______
 
