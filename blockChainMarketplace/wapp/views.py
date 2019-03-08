@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import SaleItem, Txn
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
+@login_required
 def index(request):
     item_list = SaleItem.objects.all()
     template = loader.get_template('webapp/index.html')
@@ -31,6 +34,15 @@ def sellExec(request):
     return HttpResponse(template.render(context, request))
 
 def buy(request, item_id):
+    template = loader.get_template('webapp/buy.html')
+    item = SaleItem.objects.get(item_id=item_id)
+    context = {
+                'item': item
+            }
+    return HttpResponse(template.render(context, request))
+
+def pay(request, item_id):
+    template = loader.get_template('webapp/index.html')
     item = SaleItem.objects.get(item_id=item_id)
     context = {
                 'item': item
@@ -39,8 +51,11 @@ def buy(request, item_id):
     txn.save()
     item.available = False
     item.save()
+    messages.add_message(request, messages.INFO, item.item_name + ' bought')
     item_list = SaleItem.objects.all()
-    template = loader.get_template('webapp/buy.html')
+    context = {
+            'item_list': item_list
+        }
     return HttpResponse(template.render(context, request))
 
 
