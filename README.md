@@ -15,3 +15,12 @@ Access at https://localhost:8000. Leads to default login page. Use username : ad
 Add item to the sale-list by clicking on the "I want to sell something" button.
 
 Use the "buy" button next to an item to buy. Use the "Pay" button to complete payment.
+
+smart contract functions and there expected parameters :
+
+1. register -  user address  
+2. unregister - user address
+3. buy - itemID, itemPrice, seller address
+4. addBalance - user address, amount
+5. getBalance - user address
+6. settlePayment - seller address, itemPrice
