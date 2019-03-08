@@ -27,17 +27,6 @@ contract marketPlace{
         if(customers[newUser].registered == true) revert();
             customers[newUser].registered = true;
             customers[newUser].userBalance = 500;
-            
-    function sell(uint itemId) public{
-        if(customers[msg.sender].registered == false) revert();
-        customer storage seller = customers[msg.sender];
-        seller.itemId = itemId;
-        emit listed(itemId);
-    }
-    
-    function register(address newUser) public onlyChairperson{
-        if(customers[newUser].registered == true) revert();
-            customers[newUser].registered == true;
     }
     
     function unregister(address user) public onlyChairperson{
@@ -68,22 +57,6 @@ contract marketPlace{
         if(customers[msg.sender].registered == false) revert();
         if(customers[seller].registered == false) revert();
         if(itemPrice > customers[msg.sender].userBalance) revert();
-        customers[user].registered == false;
-    }
-    
-    function settlePayment() private{
-        
-    }
-    
-    function addBalance() private{
-        
-    }
-    
-    function buy(uint itemId, int itemPrice, address seller, int balance) public{
-        if(customers[msg.sender].registered == false) revert();
-        if(customers[seller].registered == false) revert();
-        if(itemPrice > balance) revert();
-        settlePayment();
         customer storage buyer = customers[msg.sender];
         customer storage seller = customers[seller];
         buyer.itemId = itemId;
