@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class User(AbstractUser):
+    address = models.CharField(max_length = 160)
+    balance = models.FloatField(default = 500)
     pass
 
 class SaleItem(models.Model):

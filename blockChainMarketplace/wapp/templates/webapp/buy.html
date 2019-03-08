@@ -1,8 +1,15 @@
 <html>
 	<head>
-		<title>sell</title>
+		<title>Buy</title>
 	</head>
 	<body>
-		<h1>You've bought {{item.item_name}}</h1>
+		<h3>You've decided to buy {{item.item_name}}</h3>
+		<div style="text-align:center; margin:10px">
+
+			<form action="{% url 'wapp:pay' item.item_id %}" method="post">
+			{% csrf_token %}
+				<button style="left:50%" type="submit">Make Payment</button>
+			</form>
+		</div>
 	</body>
 </html>
