@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     address = models.CharField(max_length = 160)
-    balance = models.FloatField()
+    balance = models.FloatField(default = 500)
     pass
 
 class SaleItem(models.Model):
